@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".Fragments.CatalogFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/catalog_background"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="CATALOGUE"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowColor="@color/black"
+            android:shadowRadius="2"
+            android:textStyle="bold"
+            android:textColor="#FF9800"
+            android:textSize="38sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="371dp"
+            android:layout_height="55dp"
+            android:layout_margin="14dp"
+            android:layout_marginTop="32dp"
+            android:outlineSpotShadowColor="@color/black"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/rounded_toolbar"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_view"
+                android:layout_width="match_parent"
+                android:outlineSpotShadowColor="@color/black"
+                android:outlineAmbientShadowColor="@color/black"
+                android:layout_height="?attr/actionBarSize"
+                app:queryBackground="@color/white"
+                app:queryHint="Looking for an Outfit?" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.875"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.148">
+
+            <!-- Spinner for Usage -->
+
+
+            <Spinner
+                android:id="@+id/spinner_usage"
+                android:layout_width="0dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:layout_weight="30"
+                android:background="@drawable/border"
+                android:prompt="@string/select_usage_prompt" />
+
+
+            <!-- Spinner for Sub-Category -->
+            <Spinner
+                android:id="@+id/spinner_sub_category"
+                android:layout_width="0dp"
+                android:scrollIndicators="end"
+                android:layout_height="24dp"
+                android:layout_marginRight="4dp"
+                android:layout_gravity="end"
+                android:layout_weight="40"
+                android:background="@drawable/border"
+                android:prompt="@string/select_sub_category_prompt" />
+
+
+            <!-- Spinner for Season -->
+            <Spinner
+                android:id="@+id/spinner_season"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_weight="30"
+                android:background="@drawable/border"
+                android:prompt="@string/select_season_prompt" />
+
+
+
+
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/generateRecommendations"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#FF9800"
+            android:text="Generate Recommendations"
+            android:textStyle="bold"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:textColor="@color/white"
+            android:shadowColor="#FF3D00"
+            android:shadowRadius="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="16dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</FrameLayout>

@@ -1,0 +1,34 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Capstone" parent="Theme.AppCompat.NoActionBar">
+
+
+
+
+
+
+
+
+
+
+
+
+        <item name="android:textColorPrimary">#FF7600</item>
+        <item name="android:textColorSecondary">#FF9800</item>
+        <item name="android:textColor">#FFFFFF</item>
+
+
+
+
+    </style>
+
+    <style name="Theme.ProfileFragment" parent="Theme.MaterialComponents.DayNight.DarkActionBar"/>
+
+    <style name="Theme.Capstone2" parent="Theme.Material3.DayNight" />
+
+    <style name="SearchTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/searchTextColor</item>
+        <!-- Add more attributes as needed -->
+    </style>
+
+</resources>
